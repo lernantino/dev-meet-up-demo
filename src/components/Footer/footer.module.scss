@@ -1,0 +1,22 @@
+@use '../../styles/theme';
+
+.footer {
+  margin-top: auto;
+  padding: 16px;
+  background-color: theme.$background-inverted;
+
+  &__wrapper {
+    @include theme.wrap-section;
+    text-align: center;
+    color: theme.$primary-inverted;
+    h4 {
+      span {
+        font-style: normal;
+      }
+    }
+
+    small {
+      font-size: theme.$helperText;
+    }
+  }
+}

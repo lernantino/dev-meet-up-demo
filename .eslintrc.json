@@ -1,0 +1,69 @@
+{
+  "ignorePatterns": ["commitlint.config.js", "jest.config.js"],
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "react-app",
+    "airbnb",
+    "eslint:recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended",
+    "eslint-config-prettier"
+  ],
+  "plugins": ["react", "prettier", "jest", "import"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-indent": "off",
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    "prettier/prettier": "error",
+    "no-console": "warn",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "assert": "htmlFor"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/setupTests.js",
+          "**/commands.js"
+        ]
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "React": "writable"
+  }
+}

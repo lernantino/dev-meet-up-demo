@@ -1,0 +1,20 @@
+@use '../../styles/theme';
+
+.secondaryPage {
+  &__header {
+    background-color: theme.$neutral-200;
+    padding: 36px 0;
+  }
+
+  &__title {
+    @include theme.wrap-section;
+  }
+
+  &__content {
+    @include theme.wrap-section;
+
+    h3 {
+      margin: 12px 0;
+    }
+  }
+}
