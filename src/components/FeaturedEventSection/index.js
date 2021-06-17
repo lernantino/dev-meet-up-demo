@@ -3,7 +3,13 @@ import Image from 'next/image';
 
 import styles from './featuredEventSection.module.scss';
 
-const FeaturedEventSection = ({ event }) => {
+const defaultEvent = {
+  slug: '/',
+  featuredImage: { url: '/images/featured-4.jpg' },
+  name: 'No featured event at the moment!',
+};
+
+const FeaturedEventSection = ({ event = { ...defaultEvent } }) => {
   return (
     <section className={styles.featuredEventSection}>
       <div className={styles.featuredEventSection__grid}>
