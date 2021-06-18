@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import styles from './upcomingEvents.module.scss';
 
-const UpcomingEvents = ({ eventList }) => {
+const UpcomingEvents = ({ eventList = [] }) => {
   return (
     <section className={styles.upcomingEvents}>
       <h2 className={styles.upcomingEvents__title}>

@@ -5,7 +5,7 @@ import styles from './eventBanner.module.scss';
 const EventBanner = ({
   name,
   date,
-  featuredImage = '/images/featured-4.jpg',
+  featuredImage = { url: '/images/featured-4.jpg' },
 }) => {
   return (
     <section className={styles.eventBanner}>
