@@ -26,10 +26,11 @@ const Home = ({ featuredEvent, upcomingEvents }) => {
 export const getServerSideProps = async () => {
   try {
     const eventData = await getSortedEvents();
+    const [featuredEvent, ...upcomingEvents] = eventData;
     return {
       props: {
-        featuredEvent: eventData[0],
-        upcomingEvents: eventData,
+        featuredEvent,
+        upcomingEvents,
       },
     };
   } catch (err) {
