@@ -35,3 +35,14 @@ jobs:
 
       - name: 🐛 Run tests
         run: yarn test:ci
+
+        # Build the app using cypress
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        env:
+          GRAPHCMS_PROJECT_API: ${{ secrets.GRAPHCMS_PROJECT_API }}
+        with:
+          build: yarn run build
+          start: yarn start
+          wait-on: http://localhost:3000
+          browser: chrome

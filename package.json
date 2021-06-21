@@ -1,8 +1,7 @@
 {
   "name": "afe-module-05",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
+  "private": true,  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -13,7 +12,11 @@
     "commit": "npx git-cz",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run --browser chrome --headless",
+    "test:e2e": "start-server-and-test 'yarn dev' 3000 'yarn cypress'",
+    "test:e2e:ci": "start-server-and-test 'yarn dev' 3000 'yarn cypress:headless'"
   },
   "husky": {
     "hooks": {
@@ -46,6 +49,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/core": "^11.0.0",
     "@commitlint/prompt": "^11.0.0",
+    "@testing-library/cypress": "^7.0.6",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -54,6 +58,7 @@
     "babel-jest": "^27.0.2",
     "commitizen": "^4.2.3",
     "commitlint-config-cz": "^0.13.2",
+    "cypress": "^7.5.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -74,7 +79,7 @@
     "jest-dom": "^4.0.0",
     "lint-staged": "^10.5.4",
     "node-fetch": "^2.6.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "start-server-and-test": "^1.12.5"
   }
 }
-

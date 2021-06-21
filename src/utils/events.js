@@ -45,10 +45,12 @@ export const getEventData = async (slug) => {
 };
 
 export const getSortedEvents = async () => {
+  const date = new Date().toISOString().split('T')[0];
+
   const { events } = await graphcms.request(
     `
-  query getSortedEvents {
-    events(orderBy: eventDate_ASC) {
+  query getSortedEvents($date: Date!) {
+    events(orderBy: eventDate_ASC, where: {eventDate_gt: $date}) {
       name
       eventDate
       location
@@ -62,6 +64,9 @@ export const getSortedEvents = async () => {
   }
 }
 `,
+    {
+      date,
+    },
   );
   return events;
 };
